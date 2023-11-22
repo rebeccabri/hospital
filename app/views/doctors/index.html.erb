@@ -1,0 +1,11 @@
+
+  <h3> <font color="red">
+  <% @doctors.each do |doctor| %>
+    <ul>
+    >  <%= link_to "#{doctor.name} #{doctor.lastname}", doctor_path(doctor.id) %>
+    </ul>
+  <% end %>
+</h3></color>
+
+<%= link_to "Add Doctor" , new_doctor_path%>
+

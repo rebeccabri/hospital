@@ -1,0 +1,11 @@
+
+
+  <h3> <font color="green">
+  <% @patients.each do |patient| %>
+    <ul>
+    >  <%= link_to "#{patient.firstname} #{patient.lastname}", patient_path(patient.id) %>
+    </ul>
+  <% end %>
+</h3></color>
+
+<%= link_to "Add a new Patient" , new_patient_path %>

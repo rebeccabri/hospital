@@ -1,0 +1,10 @@
+<%= simple_form_for(@doctor) do |f| %>
+<%= f.input :title, collection: ["Doctor", "Professor"] %>
+<%= f.input :name %>
+<%= f.input :lastname %>
+<%= f.input :experience, collection: ["Education", "Degree"] %>
+<%= f.input :experience, collection: (2..6).map { |years| "#{years} #{'Year'.pluralize(years)}" } %>
+<%= f.input :availability, collection: ["True", "False"] %>
+<%= f.input :specialty, collection: ["Dermatologist", "Pneumologist", "Cardiolgist", "Dentist", "GP"] %>
+<%= f.submit %>
+<% end %>

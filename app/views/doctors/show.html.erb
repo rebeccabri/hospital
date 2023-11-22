@@ -1,0 +1,15 @@
+<ul><br><font color="red">
+
+
+<h1>> <%= @doctor.title %>
+<%= @doctor.name %>
+<%= @doctor.lastname %></h1>
+<br>availability: <%= @doctor.availability %>
+<br><%= @doctor.experience %> years
+<%= @doctor.specialty %>
+</ul></color>
+
+<%= link_to "Delete Doctor",
+  doctor_path(@doctor),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
