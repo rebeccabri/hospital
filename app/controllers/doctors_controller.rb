@@ -7,6 +7,8 @@ class DoctorsController < ApplicationController
   end
 
   def show
+    @doctor = Doctor.find(params[:id])
+    @education = Education.new
   end
 
   def new
@@ -37,7 +39,7 @@ class DoctorsController < ApplicationController
   def destroy
     @doctor = Doctor.find(params[:id])
     @doctor.destroy
-    redirect_to doctors_url, notice: 'Doctor was successfully destroyed.'
+    redirect_to doctors_path, notice: 'Doctor was successfully destroyed.'
   end
 
 

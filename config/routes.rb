@@ -2,14 +2,19 @@
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 # config/routes.rb
 Rails.application.routes.draw do
-  get 'reason/appointment:text'
-  get 'reason/date:date'
-  get 'reason/patientid:bigint'
-  get 'reason/doctorid:bigint'
-  resources :doctors
+#  get 'appointments/reason:text'
+#  get 'appointments/date:date'
+ # get 'appointments/patientid:bigint'
+ # get 'appointments/doctorsid:bigint'
+ # get 'appointments/urgent:boolean'
+
+  resources :doctors do
+    resources :educations
+  end
   resources :patients
+  resources :appointments
   root to: "pages#home"
-end
+
 
 
   # get "doctor", to: "doctor#index"
@@ -19,3 +24,4 @@ end
   # get "doctor/:id/edit", to: "doctor#edit", as: :edit_doctor
   # patch "doctor/:id", to: "doctor#update"
   # delete "doctor/:id", to: "doctor#destroy"
+end

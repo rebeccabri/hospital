@@ -1,0 +1,21 @@
+<%= simple_form_for(@education) do |f| %>
+<%= f.input :title, collection: ["Doctor", "Professor"] %>
+<%= f.input :university %>
+<%= f.input :degree %>
+<%= f.label :score %>
+<%= f.range_field :score, in: 50..100 %>
+<%= f.submit %>
+<% end %>
+
+# **Education**
+
+# - University
+# - Degree Name
+# - Must belgong to a doctor
+#  - Must get destroyed when a doctor gets destroyed
+# - Score - has to be above 50 and below 100
+
+# add
+
+# show
+# Edit
