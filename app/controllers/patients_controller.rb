@@ -2,18 +2,20 @@ class PatientsController < ApplicationController
   before_action :set_patient, only: [:show, :edit, :update, :destroy]
 
   def index
-    @patients = Patient.where(cured:false)
+    @patients = Patient.all
   end
 
   def show
+    @patient = Patient.find(params*'')
   end
+
 
   def new
     @patient = Patient.new
   end
 
   def create
-    @patient = Patient.new()
+    @patient = Patient.new(patients_params)
     if @patient.save
       redirect_to @patient, notice: 'Patient was successfully created.'
     else

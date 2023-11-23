@@ -10,10 +10,16 @@ Rails.application.routes.draw do
 
   resources :doctors do
     resources :educations
+    resources :appointments, only: [:new, :create]
   end
+  resources :patients do
+    resources :appointments, only: [:new, :create]
+  end
+
   resources :patients
-  resources :appointments
+  resources :appointments, only: [:index, :show, :destroy]
   root to: "pages#home"
+  end
 
 
 
@@ -24,4 +30,3 @@ Rails.application.routes.draw do
   # get "doctor/:id/edit", to: "doctor#edit", as: :edit_doctor
   # patch "doctor/:id", to: "doctor#update"
   # delete "doctor/:id", to: "doctor#destroy"
-end

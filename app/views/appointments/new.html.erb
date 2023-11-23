@@ -1,0 +1,15 @@
+<%= simple_form_for(@appointments) do |f| %>
+<%= f.input :title, collection: ["Doctor", "Professor"] %>
+<%= f.input :university %>
+<%= f.input :degree %>
+<%= f.label :score %>
+<%= f.range_field :score, in: 50..100 %>
+<%= f.submit %>
+<% end %>
+
+<%= link_to "Add a new Patient" , new_patient_path %>
+  # - Has to belong to a doctor
+- Has to belong to a patient
+- Date - Can not be created in the pas
+- Cause
+- Urgent
