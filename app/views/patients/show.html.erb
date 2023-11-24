@@ -1,12 +1,6 @@
-
-<ul><br><font color="red">
-
-
-<h1>><br>
-<%= @patient.firstname %>
-<%= @patient.lastname %></h1>
-<br><%= @patient.insurance%>
-<%= @patient.cured %>
-</ul></color>
-
-<%= link_to 'Delete', doctor_path(@doctor), method: :delete, data: { confirm: 'Are you sure?' } %>
+<h1>> <%= @patient.firstname %> <%= @patient.lastname %></h1>
+<br>
+<p>Insurance:</p><%= @patient.insurance %>
+<p>Cured:</p><%= @patient.cured %>
+<%= link_to 'Delete', patient_path(@patient), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<%= link_to 'Add Appointment', new_patient_appointment_path(@patient) %>

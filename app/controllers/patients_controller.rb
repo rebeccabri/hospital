@@ -6,9 +6,8 @@ class PatientsController < ApplicationController
   end
 
   def show
-    @patient = Patient.find(params*'')
+    @patient = Patient.find(params[:id])
   end
-
 
   def new
     @patient = Patient.new
@@ -36,7 +35,7 @@ class PatientsController < ApplicationController
 
   def destroy
     @patient.destroy
-    redirect_to doctors_url, notice: 'Patient was successfully destroyed.'
+    redirect_to patients_path, notice: 'Patient was successfully destroyed.'
   end
 
   private
@@ -49,3 +48,4 @@ class PatientsController < ApplicationController
     params.require(:patient).permit(:name, :lastname, :cured, :insurance)
   end
 end
+

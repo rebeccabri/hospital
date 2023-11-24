@@ -1,0 +1,7 @@
+<%= simple_form_for(@patient) do |f| %>
+<%= f.input :firstname %>
+<%= f.input :lastname %>
+<%= f.input :cured %>
+<%= f.input :insurance, collection: ["Private", "Public"] %>
+<%= f.submit %>
+<% end %>
